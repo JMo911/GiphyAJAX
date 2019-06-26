@@ -25,8 +25,9 @@ $( document ).ready(function() {
 function displaygiphyinfo(){
     var sport = $(this).attr("data-name");
     var url="https://api.giphy.com/v1/gifs/search?q=";
+    var params="&limit=10&rating=g"
     var apikey="&api_key=RYnKoIeTUvFnDqLxzaqXC9HtLFtkD8mk";
-    var queryurl=url + sport + apikey;
+    var queryurl=url + sport + params + apikey;
 
 $.ajax({
     url: queryurl,
