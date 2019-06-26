@@ -23,6 +23,7 @@ $( document ).ready(function() {
     });
 
 function displaygiphyinfo(){
+    $(".gifcontainer").empty();
     var sport = $(this).attr("data-name");
     var url="https://api.giphy.com/v1/gifs/search?q=";
     var params="&limit=10&rating=g"
@@ -34,6 +35,16 @@ $.ajax({
     method: "GET"
 }).then(function(response){
     console.log(response);
+    var imagearray = response.data;
+    imagearray.forEach(function(element){
+        var picDiv = $("<div>");
+        var pic= $("<iframe>");
+        pic.attr("src", element.embed_url);
+        picDiv.append(pic);
+        // pic.append(element.images);
+        $(".gifcontainer").append(picDiv);
+    })
+
     // var gifDiv = $("<div>");
     // gifDiv.append(response);
     // $(".gifcontainer").append(gifDiv);
