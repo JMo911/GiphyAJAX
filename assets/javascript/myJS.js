@@ -51,6 +51,8 @@ $.ajax({
 
 });
 }
+//TRY THE TOGGLE METHOD TO GO BETWEEN STILL PIC AND GIF?
+//look in response.images for the still version. Store that and flip flop between the two on click.
 
 
 
