@@ -14,14 +14,21 @@ $( document ).ready(function() {
         "snowboarding"
     ];
 
-    topics.forEach(function(topic){
+    function makebuttons() {
+        //empty everytime so we don't keep appending duplicates
+        $(".buttons").empty();
+    topics.forEach(function (topic){
         var button = $("<button>");
         button.text(topic);
         button.addClass("button btn btn-dark");
         button.attr("data-name", topic);
         $(".buttons").append(button);
     });
+}
 
+
+//call the makebuttons function
+makebuttons();
 
 
 function displaygiphyinfo(){
@@ -46,7 +53,8 @@ $.ajax({
                 "alt": "giphys",
                 "data-state": "still",
                 "data-animateURL": element.images.fixed_height.url,
-                "data-stillURL": element.images.fixed_height_still.url});
+                "data-stillURL": element.images.fixed_height_still.url,
+                "class": "img-fluid"});
         picDiv.append(pic);
         picDiv.append("<p>Rating: " + element.rating + "</p>");
         // pic.append(element.images);
@@ -80,6 +88,24 @@ $(document).on("click", "img", function(){
     }
     
 });
+
+//ALLOW USER INPUT TO ADD BUTTONS THAT QUERY THE API FOR GIFS FOR THEIR SPORT
+var sportInput = document.getElementById("userinput");
+
+document.querySelector("form").addEventListener("submit", function (parameter){
+    //prevent page refresh on submit
+    parameter.preventDefault();
+    topics.push(sportInput.value);
+    makebuttons();
+
+    console.log(sportInput.value);
+
+    //empty value on click
+    sportInput.value="";
+})
+
+
+
 
 
 });
