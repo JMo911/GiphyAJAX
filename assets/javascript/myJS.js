@@ -48,6 +48,7 @@ $.ajax({
                 "data-animateURL": element.images.fixed_height.url,
                 "data-stillURL": element.images.fixed_height_still.url});
         picDiv.append(pic);
+        picDiv.append("<p>Rating: " + element.rating + "</p>");
         // pic.append(element.images);
         $(".gifcontainer").append(picDiv);
     })
