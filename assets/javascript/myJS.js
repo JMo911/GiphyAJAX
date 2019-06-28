@@ -57,20 +57,14 @@ $.ajax({
                 "class": "img-fluid"});
         picDiv.append(pic);
         picDiv.append("<p>Rating: " + element.rating + "</p>");
-        // pic.append(element.images);
         $(".gifcontainer").append(picDiv);
     })
 
-    // var gifDiv = $("<div>");
-    // gifDiv.append(response);
-    // $(".gifcontainer").append(gifDiv);
+
 
 });
 }
-//TRY THE TOGGLE METHOD TO GO BETWEEN STILL PIC AND GIF?
-//look in response.images for the still version. Store that and flip flop between the two on click.
-//use the pausing Gifs activity as a reference
-//store a data-animate and a data-still value to call diff sources on click.
+
 
 
 $(document).on("click", ".button", displaygiphyinfo);
@@ -97,9 +91,6 @@ document.querySelector("form").addEventListener("submit", function (parameter){
     parameter.preventDefault();
     topics.push(sportInput.value);
     makebuttons();
-
-    console.log(sportInput.value);
-
     //empty value on click
     sportInput.value="";
 })
