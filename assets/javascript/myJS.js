@@ -26,7 +26,6 @@ $( document ).ready(function() {
     });
 }
 
-
 //call the makebuttons function
 makebuttons();
 
