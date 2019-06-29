@@ -21,42 +21,45 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!--ROW 1-->
-        <div class="row">
-            <div class ="buttons"></div>
+  <!--JUMBO DISPLAY-->
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Your one stop GIF shop!</h1>
+    <p class="lead">This is a simple app to find your favorite gifs. Click on any of the buttons below to generate 10 fresh gifs for your favorite sports. </p>
+    <hr class="my-4">
+  </div>
+
+  <!--ROW 1-->
+  <div class="row">
+    <!--BUTTONS DIV-->
+    <div class ="buttons col-sm-6">
+      </div>
+      
+    <!--NEW BUTTON FORM-->
+    <div class="addnewbuttoncontainer col-sm-6">
+      <form id="userForm">
+        <div class="form-group">
+          <label for="userinput">Need gifs for a different sport?</label>
+          <input type="userSport" class="form-control" id="userinput" aria-describedby="emailHelp" placeholder="Enter sport here...">
         </div>
-        <!--END OF ROW 1-->
-        
-        <!--ROW 2-->
-        <div class="row">
-            <div class="gifcontainer col-sm-6"></div>
-            <div class="addnewbuttoncontainer col-sm-6">
-                    <form id="userForm">
-                            <div class="form-group">
-                              <label for="userinput">Need gifs for a different sport?</label>
-                              <input type="userSport" class="form-control" id="userinput" aria-describedby="emailHelp" placeholder="Enter sport here...">
-                            </div>
-                            <button type="submit" id="userInputButton" class="btn btn-primary">Submit</button>
-                          </form>
-            </div>
-        </div>
-        <!--END OF ROW 2-->
-
-
-
-
-
-
-
-
-
-
-
-
+        <button type="submit" id="userInputButton" class="btn btn-primary">Submit</button>
+      </form>
     </div>
-    <!--END OF CONTAINER-->
+
+  </div>
+  <!--END OF ROW 1-->
+
+  <!--ROW 2-->
+  <div class="row gifcontainer justify-content-around">
+    <!--DIV TO STORE ALL OF MY GIFS-->
+    <!-- <div class="gifcontainer col-sm-6"> 
+    </div> -->
+  </div>
+<!--END OF ROW 2-->
+
+</div>
+<!--END OF CONTAINER-->
 
 
 

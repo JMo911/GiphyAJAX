@@ -47,6 +47,7 @@ $.ajax({
     var imagearray = response.data;
     imagearray.forEach(function(element){
         var picDiv = $("<div>");
+        picDiv.addClass("text-center");
         var pic= $("<img>");
         pic.attr({"src": element.images.fixed_height_still.url,
                 "alt": "giphys",

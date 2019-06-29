@@ -1,0 +1,17 @@
+.button{
+    margin: 2px;
+}
+
+.gifcontainer{
+    margin-top: 1em;
+    background-color: silver;
+    border-radius: 0.2em;
+    border-top: 0.2em solid silver;
+    font-weight: 800;
+}
+
+img{
+    border-radius: 0.6em;
+    border: 1.5px solid;
+}
+
