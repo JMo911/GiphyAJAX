@@ -56,15 +56,21 @@ $.ajax({
     url: queryurl,
     method: "GET"
 }).then(function renderGifSet(response, arraybegin, arrayend){
+    console.log(response);
     arraybegin=0;
     arrayend=10;
-
     imagearray = response.data;
     thisSlice = imagearray.slice(arraybegin,arrayend);
     
+    //LOOP THROUGH GIFS TO APPEND
     thisSlice.forEach(function(element){
         var picDiv = $("<div>");
-        picDiv.addClass("text-center");
+        //APPEND TITLES IN A CLEAN FORMAT
+        var giftitlediv = $("<div>");
+        giftitlediv.addClass("giphytitles");
+        giftitlediv.append("<p>" + element.title + "</p>");
+        picDiv.append(giftitlediv);
+        picDiv.addClass("text-center picdiv");
         var pic= $("<img>");
         pic.attr({
                 "src": element.images.fixed_height_still.url,
@@ -89,11 +95,16 @@ $.ajax({
                 $(".moreGifsButtonDiv").empty();
                 arraybegin +=10;
                 arrayend += 10;
-                console.log(arraybegin, arrayend);
+                // console.log(arraybegin, arrayend);
                 thisSlice = imagearray.slice(arraybegin,arrayend);
                 thisSlice.forEach(function(element){
                      var picDiv = $("<div>");
-                     picDiv.addClass("text-center");
+                     //APPEND TITLES IN A CLEAN FORMAT
+                     var giftitlediv = $("<div>");
+                     giftitlediv.addClass("giphytitles");
+                     giftitlediv.append("<p>" + element.title + "</p>");
+                     picDiv.append(giftitlediv);
+                     picDiv.addClass("text-center picdiv");
                      var pic= $("<img>");
                      pic.attr({
                          "src": element.images.fixed_height_still.url,

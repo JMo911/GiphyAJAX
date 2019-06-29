@@ -23,6 +23,18 @@ img{
     border: 1.5px solid;
 }
 
+.picdiv {
+    background-color: slategray;
+    border-radius: 0.5em;
+    padding: 2px;
+    margin-bottom: 5px;
+    
+}
+
 #userInputButton{
+    letter-spacing: 1px;
+}
+
+.moregifsbutton {
     letter-spacing: 1px;
 }
