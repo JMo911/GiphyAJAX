@@ -79,6 +79,7 @@ $.ajax({
                //MOREGIFBUTTON CLICK EVENT
                $(document).on("click", ".moregifsbutton", function(event){
                 event.preventDefault();
+                $(".moreGifsButtonDiv").empty();
                 arraybegin +=10;
                 arrayend += 10;
                 console.log(arraybegin, arrayend);
@@ -98,6 +99,7 @@ $.ajax({
                      picDiv.append(pic);
                      picDiv.append("<p>Rating: " + element.rating + "</p>");
                      $(".gifcontainer").append(picDiv);
+                     $(".gifcontainer").append(moreGifsButtonDiv);
                 }); 
                 
                 
@@ -112,7 +114,7 @@ $.ajax({
     moreGifsButtonDiv.addClass("col-12");
     var moreGifsButton = $("<button>");
     moreGifsButton.addClass("btn btn-dark moregifsbutton");
-    moreGifsButton.text("Click here for more GIFs");
+    moreGifsButton.text("Need more GIFs? Click Here");
     moreGifsButtonDiv.append(moreGifsButton);
     $(".gifcontainer").append(moreGifsButtonDiv);
 
