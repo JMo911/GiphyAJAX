@@ -34,13 +34,20 @@ var params;
 
 function displaygiphyinfo(){
     $(".gifcontainer").empty();
+
+    var imagearray;
+    var thisSlice;
+    //CLEAR ARRAYS ON CLICK TO ALLOW NEW SPORT TO POPULATE GIFS PROPERLY
+    $(document).on("click", ".button", function(){
+        imagearray=[];
+        thisSlice=[];
+    });
+    
     var sport = $(this).attr("data-name");
     var url="https://api.giphy.com/v1/gifs/search?q=";
     params="&limit=200&rating=g";
     var apikey="&api_key=RYnKoIeTUvFnDqLxzaqXC9HtLFtkD8mk";
     var queryurl=url + sport + params + apikey;
-    var arraybegin;
-    var arrayend;
 
     //increase limit to 200 lets say
     //on initial 'sport button click, append 1-10 (position 0-9)
@@ -52,8 +59,8 @@ $.ajax({
     arraybegin=0;
     arrayend=10;
 
-    var imagearray = response.data;
-    var thisSlice = imagearray.slice(arraybegin,arrayend);
+    imagearray = response.data;
+    thisSlice = imagearray.slice(arraybegin,arrayend);
     
     thisSlice.forEach(function(element){
         var picDiv = $("<div>");
@@ -129,9 +136,11 @@ $.ajax({
 
 
 
-
+//DISPLAY GIFS ON BUTTON CLICK
 $(document).on("click", ".button", displaygiphyinfo);
 
+
+//TOGGLE BETWEEN STILL AND ANIMATED
 $(document).on("click", "img", function(){
     if ($(this).attr("data-state") === "still") {
         $(this).attr({"data-state": "animate",
