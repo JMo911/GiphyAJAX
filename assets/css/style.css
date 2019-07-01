@@ -16,6 +16,7 @@ body{
     border-radius: 0.2em;
     border-top: 0.2em solid silver;
     font-weight: 800;
+    margin-bottom: 100px;
 }
 
 img{
@@ -37,4 +38,15 @@ img{
 
 .moregifsbutton {
     letter-spacing: 1px;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+body > footer > div > div > img {
+    background-color: steelblue;
+    border: none;
 }

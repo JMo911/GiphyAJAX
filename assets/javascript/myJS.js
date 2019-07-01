@@ -31,6 +31,12 @@ makebuttons();
 
 var params;
 
+function renderSlice() {
+    
+}
+
+
+
 
 function displaygiphyinfo(){
     $(".gifcontainer").empty();
@@ -92,10 +98,13 @@ $.ajax({
                //MOREGIFBUTTON CLICK EVENT
                $(document).on("click", ".moregifsbutton", function(event){
                 event.preventDefault();
+
+                //TRY REMOVE INSTEAD OF EMPTY??
                 $(".moreGifsButtonDiv").empty();
                 arraybegin +=10;
                 arrayend += 10;
                 // console.log(arraybegin, arrayend);
+                
                 thisSlice = imagearray.slice(arraybegin,arrayend);
                 thisSlice.forEach(function(element){
                      var picDiv = $("<div>");
@@ -179,6 +188,33 @@ document.querySelector("form").addEventListener("submit", function (parameter){
 })
 
 
+
+
+function renderSlice() {
+    
+    thisSlice.forEach(function(element){
+         var picDiv = $("<div>");
+         //APPEND TITLES IN A CLEAN FORMAT
+         var giftitlediv = $("<div>");
+         giftitlediv.addClass("giphytitles");
+         giftitlediv.append("<p>" + element.title + "</p>");
+         picDiv.append(giftitlediv);
+         picDiv.addClass("text-center picdiv");
+         var pic= $("<img>");
+         pic.attr({
+             "src": element.images.fixed_height_still.url,
+             "alt": "giphys",
+             "data-state": "still",
+             "data-animateURL": element.images.fixed_height.url,
+             "data-stillURL": element.images.fixed_height_still.url,
+             "class": "img-fluid"
+         });
+         picDiv.append(pic);
+         picDiv.append("<p>Rating: " + element.rating + "</p>");
+         $(".gifcontainer").append(picDiv);
+         $(".gifcontainer").append(moreGifsButtonDiv);
+    }); 
+}
 
 
 
